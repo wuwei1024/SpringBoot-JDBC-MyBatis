@@ -1,2 +1,2 @@
-# SpringBoot_JDBC_MyBatis
+# SpringBoot_JDBC/MyBatis
 Spring Boot with JDBC/MyBatis Demo
