@@ -3,7 +3,6 @@ package com.wuwei.test.dao;
 import com.wuwei.test.entity.Student;
 import java.util.ArrayList;
 import java.util.List;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Repository;
 
 /**
@@ -12,8 +11,7 @@ import org.springframework.stereotype.Repository;
  * @author 吴维
  * @date 2017-8-5 14:11:29
  */
-@Repository
-@Qualifier("LocalDataDao")
+@Repository("LocalDataDao")
 public class LocalDataDao implements Dao {
 
     private static List<Student> students;
