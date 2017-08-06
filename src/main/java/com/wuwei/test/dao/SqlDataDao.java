@@ -35,6 +35,7 @@ public class SqlDataDao implements Dao {
         }
     };
 
+    @Override
     public int addStudent(Student student) {
         String sql = "insert into student(name,course)values(?,?)";
         String name = student.getName();
@@ -48,6 +49,7 @@ public class SqlDataDao implements Dao {
         return jdbcTemplate.query(sql, new StudentRowMapper());
     }
 
+    @Override
     public Student getStudentById(int id) {
         String sql = "select * from student where id = ?";
         List<Student> students = jdbcTemplate.query(sql, new Object[]{id}, new StudentRowMapper());
@@ -57,6 +59,7 @@ public class SqlDataDao implements Dao {
         return null;
     }
 
+    @Override
     public int updateStudent(Student student) {
         String sql = "update student set name = ?,course = ? where id = ?";
         int id = student.getId();
@@ -65,6 +68,7 @@ public class SqlDataDao implements Dao {
         return jdbcTemplate.update(sql, new Object[]{name, course, id});
     }
 
+    @Override
     public int delStudentById(int id) {
         String sql = "delete from student where id = ?";
         return jdbcTemplate.update(sql, new Object[]{id});
