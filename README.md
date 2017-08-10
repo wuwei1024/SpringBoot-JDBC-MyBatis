@@ -1,2 +1,2 @@
-# SpringBoot-JDBC/MyBatis-MySql
-One Spring Boot Demo with JDBC/MyBatis and MySql
+# SpringBoot-MVC-JDBC/MyBatis-MySql
+One Spring Boot MVC Demo with JDBC/MyBatis and MySql
