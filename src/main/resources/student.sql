@@ -1,0 +1,12 @@
+CREATE DATABASE student;
+USE student;
+
+CREATE TABLE student(
+id      BIGINT PRIMARY KEY AUTO_INCREMENT,
+name    VARCHAR(30) NOT NULL,
+course	VARCHAR(30) NOT NULL,
+addtime TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+INSERT INTO student(name,course)VALUES('Jack','Chinese');
+INSERT INTO student(name,course)VALUES('Tom','Computer');
