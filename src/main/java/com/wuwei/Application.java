@@ -1,4 +1,4 @@
-package com.wuwei.test;
+package com.wuwei;
 
 /**
  * SpringBoot入口程序
@@ -11,7 +11,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-@MapperScan(basePackages = "com.wuwei.test.dao")
+@MapperScan(basePackages = "com.wuwei.dao")
 public class Application {
 
     public static void main(String[] args) {

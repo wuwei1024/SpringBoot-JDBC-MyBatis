@@ -1,18 +1,17 @@
-package com.wuwei.test.service;
+package com.wuwei.dao;
 
-import com.wuwei.test.entity.Student;
+import com.wuwei.entity.Student;
 import java.util.List;
 
 /**
- * Service接口
  *
  * @author 吴维
- * @date 2017-8-6 20:31:29
+ * @date 2017-8-5 21:03:48
  */
-public interface StudentService {
+public interface Dao {
 
     public int addStudent(Student student);
-
+    
     public List<Student> getAllStudent();
 
     public Student getStudentById(int id);
@@ -20,4 +19,5 @@ public interface StudentService {
     public int updateStudent(Student student);
 
     public int delStudentById(int id);
+    
 }

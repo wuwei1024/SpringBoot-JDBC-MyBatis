@@ -1,4 +1,4 @@
-package com.wuwei.test.entity;
+package com.wuwei.entity;
 
 import java.io.Serializable;
 

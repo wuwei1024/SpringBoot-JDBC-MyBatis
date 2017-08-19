@@ -1,6 +1,6 @@
-package com.wuwei.test.dao;
+package com.wuwei.dao;
 
-import com.wuwei.test.entity.Student;
+import com.wuwei.entity.Student;
 import java.util.ArrayList;
 import java.util.List;
 import org.springframework.stereotype.Repository;

@@ -1,7 +1,7 @@
-package com.wuwei.test.service;
+package com.wuwei.service;
 
-import com.wuwei.test.dao.Dao;
-import com.wuwei.test.entity.Student;
+import com.wuwei.dao.Dao;
+import com.wuwei.entity.Student;
 import java.util.List;
 import javax.annotation.Resource;
 import org.springframework.stereotype.Service;

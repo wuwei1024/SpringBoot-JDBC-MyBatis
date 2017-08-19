@@ -1,6 +1,6 @@
-package com.wuwei.test.dao;
+package com.wuwei.dao;
 
-import com.wuwei.test.entity.Student;
+import com.wuwei.entity.Student;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
