@@ -4,14 +4,15 @@ import com.wuwei.entity.Student;
 import com.wuwei.service.StudentService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * 控制器Controller
+ * 控制器Controller 
+ * 请求地址：http://ip:port/contextPath/servletPath
+ * 例如：http://localhost:8181/demo/student/getAllStudent
  *
  * @author 吴维
  * @date 2017-8-5 14:52:54
@@ -36,8 +37,8 @@ public class Controller {
     }
 
     //根据ID查询
-    @RequestMapping("/getStudentById/{id}")
-    public Student getStudentById(@PathVariable("id") int id) {
+    @RequestMapping("/getStudentById")
+    public Student getStudentById(@RequestParam("id") int id) {
         return studentService.getStudentById(id);
     }
 
