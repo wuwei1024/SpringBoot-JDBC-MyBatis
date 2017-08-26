@@ -4,6 +4,7 @@ import com.wuwei.entity.Student;
 import com.wuwei.service.StudentService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -17,6 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @author 吴维
  * @date 2017-8-5 14:52:54
  */
+@CrossOrigin
 @RestController
 @RequestMapping("/student")
 public class Controller {
