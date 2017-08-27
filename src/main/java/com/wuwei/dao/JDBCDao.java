@@ -10,13 +10,13 @@ import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
 /**
- * 数据访问层Dao：与数据库交互
+ * 数据访问层Dao
  *
  * @author 吴维
  * @date 2017-8-5 21:16:05
  */
-@Repository("SqlDataDao")
-public class SqlDataDao implements Dao {
+//@Repository("JDBCDao")
+public class JDBCDao implements Dao {
 
     @Autowired
     private JdbcTemplate jdbcTemplate;
@@ -26,19 +26,22 @@ public class SqlDataDao implements Dao {
         @Override
         public Student mapRow(ResultSet rs, int i) throws SQLException {
             Student student = new Student();
-            student.setId(rs.getInt("id"));
+            student.setId(rs.getLong("id"));
             student.setName(rs.getString("name"));
+            student.setGender(rs.getString("gender"));
             student.setCourse(rs.getString("course"));
+            student.setAddTime(rs.getTimestamp("addTime"));
             return student;
         }
     };
 
     @Override
     public int addStudent(Student student) {
-        String sql = "insert into student(name,course)values(?,?)";
+        String sql = "insert into student(name,gender,course)values(?,?,?)";
         String name = student.getName();
+        String gender = student.getGender();
         String course = student.getCourse();
-        return jdbcTemplate.update(sql, new Object[]{name, course});
+        return jdbcTemplate.update(sql, new Object[]{name, gender, course});
     }
 
     @Override
@@ -48,7 +51,7 @@ public class SqlDataDao implements Dao {
     }
 
     @Override
-    public Student getStudentById(int id) {
+    public Student getStudentById(Long id) {
         String sql = "select * from student where id = ?";
         List<Student> students = jdbcTemplate.query(sql, new Object[]{id}, new StudentRowMapper());
         if (students != null && students.size() > 0) {
@@ -59,15 +62,16 @@ public class SqlDataDao implements Dao {
 
     @Override
     public int updateStudent(Student student) {
-        String sql = "update student set name = ?,course = ? where id = ?";
-        int id = student.getId();
+        String sql = "update student set name = ?, gender = ?, course = ? where id = ?";
+        Long id = student.getId();
         String name = student.getName();
+        String gender = student.getGender();
         String course = student.getCourse();
-        return jdbcTemplate.update(sql, new Object[]{name, course, id});
+        return jdbcTemplate.update(sql, new Object[]{name, gender, course, id});
     }
 
     @Override
-    public int delStudentById(int id) {
+    public int delStudentById(Long id) {
         String sql = "delete from student where id = ?";
         return jdbcTemplate.update(sql, new Object[]{id});
     }

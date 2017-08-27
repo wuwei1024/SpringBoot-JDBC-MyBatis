@@ -40,7 +40,7 @@ public class Controller {
 
     //根据ID查询
     @RequestMapping("/getStudentById")
-    public Student getStudentById(@RequestParam("id") int id) {
+    public Student getStudentById(@RequestParam("id") Long id) {
         return studentService.getStudentById(id);
     }
 
@@ -52,7 +52,7 @@ public class Controller {
 
     //删除(Delete)
     @RequestMapping("/delStudentById")
-    public int delStudentById(@RequestParam("id") int id) {
+    public int delStudentById(@RequestParam("id") Long id) {
         return studentService.delStudentById(id);
     }
 }

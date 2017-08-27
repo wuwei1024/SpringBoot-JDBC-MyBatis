@@ -14,10 +14,10 @@ public interface Dao {
     
     public List<Student> getAllStudent();
 
-    public Student getStudentById(int id);
+    public Student getStudentById(Long id);
 
     public int updateStudent(Student student);
 
-    public int delStudentById(int id);
+    public int delStudentById(Long id);
     
 }

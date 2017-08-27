@@ -4,7 +4,8 @@
 <mapper namespace="com.wuwei.dao.Dao">
     
     <insert id="addStudent" parameterType="com.wuwei.entity.Student">
-        insert into student(name,course)values(#{name},#{course})
+        insert into student(name,gender,course)
+        values(#{name},#{gender},#{course})
     </insert>
     
     <select id="getAllStudent" resultType="com.wuwei.entity.Student">
@@ -12,15 +13,16 @@
     </select>
     
     <select id="getStudentById" resultType="com.wuwei.entity.Student">
-        select * from student where id = #{id}
+        select * from student where id=#{id}
     </select>
     
     <update id="updateStudent" parameterType="com.wuwei.entity.Student">
-        update student set name = #{name}, course = #{course} where id = #{id}
+        update student set name=#{name},gender=#{gender},course=#{course}
+        where id=#{id}
     </update>
     
-    <update id="delStudentById" parameterType="int">
-        delete from student where id = #{id}
+    <update id="delStudentById">
+        delete from student where id=#{id}
     </update>
     
 </mapper>
