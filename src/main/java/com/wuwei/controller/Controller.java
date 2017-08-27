@@ -1,5 +1,6 @@
 package com.wuwei.controller;
 
+import com.wuwei.entity.Result;
 import com.wuwei.entity.Student;
 import com.wuwei.service.StudentService;
 import java.util.List;
@@ -28,31 +29,31 @@ public class Controller {
 
     //增加(Create)
     @RequestMapping("/addStudent")
-    public int addStudent(@RequestBody Student student) {
+    public Result addStudent(@RequestBody Student student) {
         return studentService.addStudent(student);
     }
 
     //查询(Retrieve)
     @RequestMapping("/getAllStudent")
-    public List<Student> getAllStudent() {
+    public Result getAllStudent() {
         return studentService.getAllStudent();
     }
 
     //根据ID查询
     @RequestMapping("/getStudentById")
-    public Student getStudentById(@RequestParam("id") Long id) {
+    public Result getStudentById(@RequestParam("id") Long id) {
         return studentService.getStudentById(id);
     }
 
     //更新(Update)
     @RequestMapping("/updateStudent")
-    public int updateStudent(@RequestBody Student student) {
+    public Result updateStudent(@RequestBody Student student) {
         return studentService.updateStudent(student);
     }
 
     //删除(Delete)
     @RequestMapping("/delStudentById")
-    public int delStudentById(@RequestParam("id") Long id) {
+    public Result delStudentById(@RequestParam("id") Long id) {
         return studentService.delStudentById(id);
     }
 }

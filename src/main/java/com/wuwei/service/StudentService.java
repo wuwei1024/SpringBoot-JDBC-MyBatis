@@ -1,5 +1,6 @@
 package com.wuwei.service;
 
+import com.wuwei.entity.Result;
 import com.wuwei.entity.Student;
 import java.util.List;
 
@@ -11,13 +12,13 @@ import java.util.List;
  */
 public interface StudentService {
 
-    public int addStudent(Student student);
+    public Result addStudent(Student student);
 
-    public List<Student> getAllStudent();
+    public Result getAllStudent();
 
-    public Student getStudentById(Long id);
+    public Result getStudentById(Long id);
 
-    public int updateStudent(Student student);
+    public Result updateStudent(Student student);
 
-    public int delStudentById(Long id);
+    public Result delStudentById(Long id);
 }
